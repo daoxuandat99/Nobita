@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+<img src="images/nobita.jpg" id="ID" style="position: absolute; left: 0; top: 0;"
+     height="200" width="180"/>
+<script>
+    function upArr() {
+        let element = document.getElementById("ID");
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+
+    }
+
+    function dowArr() {
+        let element = document.getElementById("ID");
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+
+    }
+
+    function leftArr() {
+        let element = document.getElementById("ID");
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+
+    }
+
+    function rightArr() {
+        let element = document.getElementById("ID");
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+
+    }
+
+    function move(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArr();
+                break;
+            case 39:
+                rightArr();
+                break;
+            case 38:
+                upArr();
+                break;
+            case 40:
+                dowArr();
+                break;
+
+
+        }
+
+    }
+
+    function docReady() {
+        window.addEventListener('keydown', move);
+
+    }
+</script>
+</body>
+</html>
